@@ -4,7 +4,7 @@ rem Find MSBuild
 setlocal enabledelayedexpansion
 set VSWHERE="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 
-for /f "usebackq tokens=*" %%i in (`%VSWHERE% -latest -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\Roslyn\csi.exe`) do (
+for /f "usebackq tokens=*" %%i in (`%VSWHERE% -latest -prerelease -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\Roslyn\csi.exe`) do (
   set CSIPATH=%%i
 )
 
